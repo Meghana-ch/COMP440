@@ -9,6 +9,5 @@ Bhargav Kandru (CSUN ID: 203126241)
 
 **Contribution of Teammates:**
 
-Meghana CHikkam: Worked with the Front-end Development and functionalities
-
-Bhagav Kandru: Worked with the SQL Connections and database, Pushed code to GitHub, and wrote the README content.
+- Meghana Chikkam: Worked with the Front-end Development and functionalities
+- Bhagav Kandru: Worked with the SQL Connections and database, Pushed code to GitHub, and wrote the README content.
