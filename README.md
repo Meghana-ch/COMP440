@@ -1,6 +1,6 @@
 # COMP440
 **Phase 1 submission:** Login and Registration Page
-**Youtube URL:** https://youtu.be/qXcz0gYC38Q**
+**Youtube URL:** https://youtu.be/qXcz0gYC38Q
 **Team Members:** 
 Meghana Chikkam (CSUN ID: 202630707)
 Bhargav Kandru (CSUN ID: 203126241)
