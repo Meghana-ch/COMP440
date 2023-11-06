@@ -13,7 +13,7 @@ Bhargav Kandru (CSUN ID: 203126241)
 
 **Phase 2 submission:** 
 
-**Youtube URL for Phase 2:** https://youtu.be/qXcz0gYC38Q
+**Youtube URL for Phase 2:** https://youtu.be/1KOuLZl0tf8?si=j4nIh8cHqqFD9Gv3
 
 **Team Members:** 
 Meghana Chikkam (CSUN ID: 202630707)
