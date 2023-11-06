@@ -4,39 +4,47 @@ import tkinter as tk
 import pymysql
 from tkinter import messagebox
 
+
 # Functionality
 def user_enter(event):
     if usernameEntry.get() == 'Username':
         usernameEntry.delete(0, END)
+
 
 def password_enter(event):
     if passwordEntry.get() == 'Password':
         passwordEntry.delete(0, END)
         passwordEntry.config(show='*')
 
+
 def hide():
-    closeeye.config(file='openeye.png')
+    closeeye.config(file='img/openeye.png')
     passwordEntry.config(show='')
     eyeButton.config(command=show)
 
+
 def show():
-    closeeye.config(file='closeye.png')
+    closeeye.config(file='img/closeye.png')
     passwordEntry.config(show='*')
     eyeButton.config(command=hide)
+
 
 def signup_page():
     login.destroy()
     import signup
 
+
 def clear():
     usernameEntry.delete(0, END)
     passwordEntry.delete(0, END)
+
+
 def login_user():
     if usernameEntry.get() == '' or passwordEntry.get() == '':
         messagebox.showerror('ERROR', 'All fields are Required.')
     else:
         try:
-            con = pymysql.connect(host='localhost', port=3306,  user='root', password='Honey@2323', database='proj1_db')
+            con = pymysql.connect(host='localhost', port=3306, user='root', password='Honey@2323', database='proj1_db')
             mycursor = con.cursor()
         except:
             messagebox.showerror('ERROR', 'Database Connectivity Issue, please try again!')
@@ -51,10 +59,11 @@ def login_user():
             messagebox.showerror('ERROR', 'Invalid Username or Password')
         else:
             messagebox.showinfo('WELCOME', 'Login is Successful!')
-            clear()
             con.close()
+            clear()
             login.destroy()
-            import homepage
+            import home
+
 
 # GUI
 login = Tk()
@@ -63,7 +72,7 @@ login.resizable(False, False)  # disable the full screen option for window
 login.title('Login Page')  # Title of the window
 
 # Background image setting
-bgImage = ImageTk.PhotoImage(file='bg.jpg')
+bgImage = ImageTk.PhotoImage(file='img/bg.jpg')
 bgLabel = Label(login, image=bgImage)
 bgLabel.grid(row=0, column=0)
 
@@ -89,14 +98,14 @@ passwordEntry.bind('<FocusIn>', password_enter)
 frame2 = Frame(login, width=250, height=2, bg='firebrick1')
 frame2.place(x=580, y=270)
 # eye button
-closeeye = PhotoImage(file='closeye.png')
+closeeye = PhotoImage(file='img/closeye.png')
 eyeButton = Button(login, image=closeeye, bd=0, highlightthickness=0, activebackground='white', cursor='hand2',
                    command=hide)
 eyeButton.place(x=800, y=243)
 
 forgetButton = tk.Button(login, text='Forgot Password?', font=('Open Sans', 13), background='white',
-                         foreground='firebrick2',
-                         highlightthickness=0, highlightcolor='plum', highlightbackground='white', border=0)
+                         foreground='firebrick2', highlightthickness=0, highlightcolor='plum',
+                         highlightbackground='white', border=0)
 forgetButton.place(x=700, y=275)
 
 loginButton = tk.Button(login, text='LOGIN', font=('Open Sans', 17, 'bold'), background='grey', foreground='firebrick2',
@@ -109,15 +118,15 @@ orLabel = Label(login, text='------------------ OR ------------------', font=('O
                 bg='white')
 orLabel.place(x=563, y=380)
 
-fblogo = PhotoImage(file='facebook.png')
+fblogo = PhotoImage(file='img/facebook.png')
 fbLabel = Label(login, image=fblogo, bg='white')
 fbLabel.place(x=620, y=420)
 
-googlelogo = PhotoImage(file='google.png')
+googlelogo = PhotoImage(file='img/google.png')
 googleLabel = Label(login, image=googlelogo, bg='white')
 googleLabel.place(x=690, y=420)
 
-twitterlogo = PhotoImage(file='twitter.png')
+twitterlogo = PhotoImage(file='img/twitter.png')
 twitterLabel = Label(login, image=twitterlogo, bg='white')
 twitterLabel.place(x=760, y=420)
 

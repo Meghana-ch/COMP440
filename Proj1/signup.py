@@ -4,9 +4,11 @@ from PIL import ImageTk
 import tkinter as tk
 import pymysql
 
+
 def login_page():
     signup.destroy()
     import signin
+
 
 def clear():
     emailEntry.delete(0, END)
@@ -16,6 +18,7 @@ def clear():
     ConfirmPasswordEntry.delete(0, END)
     userEntry.delete(0, END)
 
+
 def check_error():
     if firstEntry.get() == '' or lastEntry.get() == '' or emailEntry.get() == '' or userEntry.get() == '' or passwordEntry.get() == '' or ConfirmPasswordEntry.get() == '':
         messagebox.showerror('ERROR', 'All fields are Required')
@@ -24,11 +27,12 @@ def check_error():
     else:
         return True
 
+
 def connect_db():
     check_error()
     if check_error():
         try:
-            con = pymysql.connect(host='localhost', port=3306,  user='root', password='Honey@2323', database='proj1_db')
+            con = pymysql.connect(host='localhost', port=3306, user='root', password='Honey@2323', database='proj1_db')
             mycursor = con.cursor()
         except:
             messagebox.showerror('ERROR', 'Database Connectivity Issue, please try again!')
@@ -48,7 +52,8 @@ def connect_db():
             messagebox.showerror('ERROR', 'Username already exists.')
         else:
             query = 'insert into proj1_db.user(Username, Password, `First Name`, `Last Name`, Email) values(%s, %s, %s, %s, %s)'
-            mycursor.execute(query, (userEntry.get(), passwordEntry.get(), firstEntry.get(), lastEntry.get(), emailEntry.get()))
+            mycursor.execute(query, (
+            userEntry.get(), passwordEntry.get(), firstEntry.get(), lastEntry.get(), emailEntry.get()))
             con.commit()
             messagebox.showinfo('SUCCESS!', 'Registration successful!\nPlease Login')
             con.close()
@@ -63,7 +68,7 @@ signup.title('Signup Page')
 signup.resizable(False, False)
 
 # Background setup
-background = ImageTk.PhotoImage(file='bg.jpg')
+background = ImageTk.PhotoImage(file='img/bg.jpg')
 bgLabel = Label(signup, image=background)
 bgLabel.grid()
 
