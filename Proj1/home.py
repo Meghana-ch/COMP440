@@ -3,6 +3,10 @@ from PIL import ImageTk
 
 
 # Functionality
+def phase3_page():
+    home.destroy()
+    import phase3
+
 def insert_page():
     home.destroy()
     import insert
@@ -10,6 +14,7 @@ def insert_page():
 def search_page():
     home.destroy()
     import search
+
 
 def gen_page():
     home.destroy()
@@ -46,9 +51,16 @@ SearchButton = Button(home, text='Search Data', font=('Open Sans', 20, 'bold'), 
 SearchButton.place(x=350, y=350)
 
 # Generate Button
-GenButton = Button(home, text='Initialize Database', font=('Open Sans', 20, 'bold'), bg='cyan3', activebackground='cyan',
+GenButton = Button(home, text='Initialize Database', font=('Open Sans', 20, 'bold'), bg='cyan3',
+                   activebackground='cyan',
                    foreground='cyan4', activeforeground='cyan4', highlightthickness=2, highlightcolor='cyan4',
                    highlightbackground='cyan4', border=2, width=17, height=1, command=gen_page)
 GenButton.place(x=350, y=450)
 
+# Phase3
+# Generate Button
+Phase3Button = Button(home, text='Phase 3 Options', font=('Open Sans', 20, 'bold'), bg='cyan3', activebackground='cyan',
+                      foreground='cyan4', activeforeground='cyan4', highlightthickness=2, highlightcolor='cyan4',
+                      highlightbackground='cyan4', border=2, width=17, height=1, command=phase3_page)
+Phase3Button.place(x=350, y=550)
 home.mainloop()

@@ -67,9 +67,9 @@ def write_review():
             query = 'SELECT Price FROM product WHERE Product_ID=%s'
             mycursor.execute(query, IDEntry.get())
             Price = mycursor.fetchone()
-            query = 'insert into proj1_db.review(Product_Name, Category, Price, Rating, Review, User, Entry_Date) values(%s, %s, %s, %s, %s, %s, curdate())'
+            query = 'insert into proj1_db.review(Product_ID, Product_Name, Category, Price, Rating, Review, User, Entry_Date) values(%s, %s, %s, %s, %s, %s, curdate())'
             mycursor.execute(query,
-                             (Product_name, Category, Price, rating_var.get(), review_text_entry.get(),
+                             (IDEntry.get(), Product_name, Category, Price, rating_var.get(), review_text_entry.get(),
                               UsernameEntry.get()))
             con.commit()
             messagebox.showinfo('SUCCESS!', 'Review Logged!')

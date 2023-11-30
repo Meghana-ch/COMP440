@@ -1,6 +1,5 @@
 from tkinter import *
 import pymysql
-from tkinter import messagebox
 from PIL import ImageTk
 from tkinter import ttk
 
@@ -19,7 +18,7 @@ def initialize_database():
     mycursor.execute(query)
 
     query = 'CREATE TABLE product' \
-            '( Product_ID INT AUTO_INCREMENT PRIMARY KEY, Title VARCHAR(100), Description varchar(2500),' \
+            '(Product_ID INT AUTO_INCREMENT PRIMARY KEY, Title VARCHAR(100), Description varchar(2500),' \
             'Category VARCHAR(100), Price int, Username varchar(100), Entry_Date date)'
     mycursor.execute(query)
 
